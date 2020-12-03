@@ -1,5 +1,10 @@
 FROM alpine:latest
-LABEL maintainer="clement-z"
+
+# Labels
+LABEL author="Clément Zrounba"
+LABEL maintainer="Clément Zrounba"
+LABEL description="Mindustry server docker"
+LABEL build=""
 
 # Default to latest release
 ARG MINDUSTRY_GITHUB_REPO="Anuken/Mindustry"
@@ -13,7 +18,7 @@ RUN apk add --no-cache \
       shadow \
       tzdata
 
-# Create folders and download mindustry (latest release)
+# Create folders and download mindustry server
 RUN mkdir -p /opt/mindustry
 RUN mkdir -p /opt/mindustry/config
 RUN if [[ x"${MINDUSTRY_RELEASE}" == x"latest" ]]; then \
