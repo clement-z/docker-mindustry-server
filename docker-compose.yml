@@ -6,7 +6,8 @@ services:
     container_name: "mindustry-server"
 
     volumes:
-      #- "/path/to/config:/opt/mindustry/config"
+      # Change to where you want to store mindustry config
+      - "./path/to/config:/opt/mindustry/config"
 
     # set interactive
     tty: true
