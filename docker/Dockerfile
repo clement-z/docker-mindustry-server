@@ -40,7 +40,10 @@ ENV MINDUSTRY_ARGS=
 VOLUME /opt/mindustry/config
 # Note: config folder will be chowned to PUID:PGID
 
+# game server port
 EXPOSE 6567
+# command port (if enabled on server)
+EXPOSE 6859
 
 ADD entrypoint.sh /entrypoint.sh
 CMD /entrypoint.sh
