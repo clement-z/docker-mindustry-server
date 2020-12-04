@@ -34,7 +34,8 @@ RUN useradd -u 911 -U -d /opt/mindustry -s /bin/false abc
 # If unset, server runs as 991:991
 ENV PUID=
 ENV PGID=
-ENV MINDUSTRY_ARGS="help"
+# Optional var that is given to the server as it starts
+ENV MINDUSTRY_ARGS=
 
 VOLUME /opt/mindustry/config
 # Note: config folder will be chowned to PUID:PGID
