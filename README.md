@@ -36,6 +36,8 @@ list of commands or refer to [the wiki][wiki-link-server].
 To host your first game, simply type `host` and join your game once the server
 is ready!
 
+You can detach from the running container by entering `<CTRL-P> <CTRL-Q>`
+
 ## Firewall and port-forward
 
 The game needs one tcp/udp port. The default is `6567`. If you have a firewall,
