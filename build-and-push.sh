@@ -6,7 +6,7 @@ TAG=${TAG:-"latest"}
 
 # Set the docker registry location (where the container is pushed).
 # Leave empty to only build a local container
-#DOCKER_REGISTRY=docker...
+#DOCKER_REGISTRY=docker.io/clementz
 #DOCKER_REGISTRY=localhost:5000
 DOCKER_REGISTRY=
 
