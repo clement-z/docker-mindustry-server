@@ -3,7 +3,7 @@
 ## Building the image
 
 Set the contents of `build-and-push.sh` to your liking and run it (or download
-the image from [clementz/mindustry-server][docker-hub-link].
+the image from [clementz/mindustry-server][docker-hub-link]).
 
 ## Running
 
