@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mindustry-server:
+    image: localhost:5000/mindustry-server
+    container_name: "mindustry-server"
+
+    # attach with `docker attach container_name`
+    tty: true
+    stdin_open: true
+    
+    environment:
+      - PUID=1000
+      - PGID=1000
+        #- MINDUSTRY_ARGS=host,status
+      - MINDUSTRY_ARGS=
+
+    ports:
+      - "6567:6567"
+      - "6567:6567/udp"
