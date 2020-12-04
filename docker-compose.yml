@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mindustry-server:
-    image: localhost:5000/mindustry-server
+    image: clementz/mindustry-server
     container_name: "mindustry-server"
 
     # attach with `docker attach container_name`
