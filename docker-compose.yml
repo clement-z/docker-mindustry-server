@@ -5,14 +5,17 @@ services:
     image: clementz/mindustry-server
     container_name: "mindustry-server"
 
-    # attach with `docker attach container_name`
+    volumes:
+      #- "/path/to/config:/opt/mindustry/config"
+
+    # set interactive
     tty: true
     stdin_open: true
     
     environment:
       - PUID=1000
       - PGID=1000
-        #- MINDUSTRY_ARGS=host,status
+      #- MINDUSTRY_ARGS=host,status
       - MINDUSTRY_ARGS=
 
     ports:
