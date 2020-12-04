@@ -39,7 +39,10 @@ is ready!
 
 ## Firewall and port-forward
 
-The game needs one tcp/udp port. The default is `6567`.
+The game needs one tcp/udp port. The default is `6567`. If you have a firewall,
+you should allow incoming/outgoing traffic to/from this port.
 
+If you want to host your game on the internet, you will also most likely need
+to set up port-forwarding on your router.
 
 [docker-hub-link](https://mindustrygame.github.io/wiki/servers/#dedicated-server-commands)
