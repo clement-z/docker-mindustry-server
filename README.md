@@ -31,8 +31,7 @@ docker attach `docker-compose ps -q`
 ```
 
 When attached to the container, you can use the shell. Type in `help` for a
-list of commands or refer to [the
-wiki](https://mindustrygame.github.io/wiki/servers/#dedicated-server-commands).
+list of commands or refer to [the wiki][wiki-link-server].
 
 To host your first game, simply type `host` and join your game once the server
 is ready!
@@ -45,4 +44,5 @@ you should allow incoming/outgoing traffic to/from this port.
 If you want to host your game on the internet, you will also most likely need
 to set up port-forwarding on your router.
 
-[docker-hub-link](https://mindustrygame.github.io/wiki/servers/#dedicated-server-commands)
+[wiki-link-server]: https://mindustrygame.github.io/wiki/servers/#dedicated-server-commands
+[docker-hub-link]: https://hub.docker.com/r/clementz/mindustry-server
