@@ -1,11 +1,17 @@
 #! /bin/bash -x
 
+# For manually specifying the docker-tag/release-tag
+TAG_MANUAL=no
 #TAG="v121"
 #TARGET_RELEASE="v121"
 
 # Set defaults
 TAG=${TAG:-"latest"}
 TARGET_RELEASE=${TARGET_RELEASE:-"latest"}
+
+function get_latest_mindustry_release() {
+	curl https://api.github.com/repos/Anuken/Mindustry/releases/latest | jq '.tag_name' | sed 's/"//g' -
+}
 
 ########################
 function init() {
@@ -37,4 +43,15 @@ docker buildx ls | grep -e '^mybuilder' &>/dev/null || \
 	create
 
 cd docker
-build clementz/mindustry-server:$TAG linux/arm,linux/arm64,linux/amd64
+
+if [[ "${TAG_MANUAL}" = "yes" ]]; then
+	build clementz/mindustry-server:$TAG linux/arm,linux/arm64,linux/amd64
+else
+	TARGET_RELEASE="`get_latest_mindustry_release`"
+	TAG="${TARGET_RELEASE}"
+	build clementz/mindustry-server:$TAG linux/arm,linux/arm64,linux/amd64
+
+	TARGET_RELEASE="latest"
+	TAG="latest"
+	build clementz/mindustry-server:$TAG linux/arm,linux/arm64,linux/amd64
+fi
