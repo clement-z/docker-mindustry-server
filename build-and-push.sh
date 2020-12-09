@@ -1,7 +1,11 @@
 #!/bin/bash
 
+#TAG="v121"
+#TARGET_RELEASE="v121"
+
 IMAGE_NAME=mindustry-server
 TAG=${TAG:-"latest"}
+TARGET_RELEASE=${TARGET_RELEASE:-"latest"}
 # TODO: add logic for tag (using git tag) or use commandline -t switch
 
 # Set the docker registry location (where the container is pushed).
@@ -40,6 +44,7 @@ esac
 
 # Build image (default to LOCAL_IMAGES_PREFIX if DOCKER_REGISTRY isn't set)
 docker build  -t ${DOCKER_REGISTRY:-${LOCAL_IMAGES_PREFIX}}/${IMAGE_NAME}:${TAG} \
+	      --build-arg "MINDUSTRY_RELEASE"="$TARGET_RELEASE" \
               --label "build"="`git rev-parse HEAD`" \
               docker
 
