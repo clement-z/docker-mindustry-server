@@ -13,7 +13,7 @@ docker run  -it \
             -e PUID=1000 `#optional`\
             -e PGID=1000 `#optional`\
             -p 6567 -p 6567/udp \
-            -v /path/to/config:/opt/mindustry/config \
+            -v ./config:/opt/mindustry/config \
             --name mindustry-server \
             --rm \
             --detach \
