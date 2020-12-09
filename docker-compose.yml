@@ -6,8 +6,11 @@ services:
     container_name: "mindustry-server"
 
     volumes:
-      # Change to where you want to store mindustry config
-      - "./path/to/config:/opt/mindustry/config"
+      # Change to where you want to store mindustry config.
+      # This folder will be owned by specified PUID:GUID However if the path to
+      # the folder doesn't exist, it will be created and owned by root by
+      # default.
+      - "./config:/opt/mindustry/config"
 
     # set interactive
     tty: true
